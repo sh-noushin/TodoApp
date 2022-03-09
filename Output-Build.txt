@@ -1,0 +1,52 @@
+﻿Rebuild started...
+1>------ Rebuild All started: Project: TodoApp.Web, Configuration: Debug Any CPU ------
+2>------ Rebuild All started: Project: TodoApp.Domain.Shared, Configuration: Debug Any CPU ------
+3>------ Rebuild All started: Project: TodoApp.Application.Contract, Configuration: Debug Any CPU ------
+4>------ Rebuild All started: Project: TodoApp.Application, Configuration: Debug Any CPU ------
+Restored D:\_Ale\Projects\Github\TodoApp\TodoApp\TodoApp.Domain.Shared\TodoApp.Domain.Shared.csproj (in 5 ms).
+Restored D:\_Ale\Projects\Github\TodoApp\TodoApp\TodoApp.Application\TodoApp.Application.csproj (in 11 ms).
+Restored D:\_Ale\Projects\Github\TodoApp\TodoApp\TodoApp.Domain\TodoApp.Domain.csproj (in 5 ms).
+Restored D:\_Ale\Projects\Github\TodoApp\TodoApp\TodoApp.EntityFrameworkCore\TodoApp.EntityFrameworkCore.csproj (in 27 ms).
+Restored D:\_Ale\Projects\Github\TodoApp\TodoApp\TodoApp.Application.Contract\TodoApp.Application.Contract.csproj (in 26 ms).
+Restored D:\_Ale\Projects\Github\TodoApp\TodoApp\TodoApp.Web\TodoApp.Web.csproj (in 34 ms).
+2>TodoApp.Domain.Shared -> D:\_Ale\Projects\Github\TodoApp\TodoApp\TodoApp.Domain.Shared\bin\Debug\net6.0\TodoApp.Domain.Shared.dll
+5>------ Rebuild All started: Project: TodoApp.Domain, Configuration: Debug Any CPU ------
+4>TodoApp.Application -> D:\_Ale\Projects\Github\TodoApp\TodoApp\TodoApp.Application\bin\Debug\net6.0\TodoApp.Application.dll
+3>D:\_Ale\Projects\Github\TodoApp\TodoApp\TodoApp.Application.Contract\Categories\Dtos\Requests\GetCategoriesRequest.cs(11,23,11,33): warning CS8618: Non-nullable property 'FilterText' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+3>D:\_Ale\Projects\Github\TodoApp\TodoApp\TodoApp.Application.Contract\Categories\Dtos\Requests\CategoryUpdateRequest.cs(11,23,11,27): warning CS8618: Non-nullable property 'Name' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+3>D:\_Ale\Projects\Github\TodoApp\TodoApp\TodoApp.Application.Contract\Categories\Dtos\Responses\CategoryResponse.cs(12,23,12,27): warning CS8618: Non-nullable property 'Name' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+3>D:\_Ale\Projects\Github\TodoApp\TodoApp\TodoApp.Application.Contract\TodoItems\Dtos\Responses\TodoItemResponse.cs(12,23,12,28): warning CS8618: Non-nullable property 'Title' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+3>D:\_Ale\Projects\Github\TodoApp\TodoApp\TodoApp.Application.Contract\TodoItems\Dtos\Responses\TodoItemResponse.cs(14,23,14,34): warning CS8618: Non-nullable property 'Description' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+3>D:\_Ale\Projects\Github\TodoApp\TodoApp\TodoApp.Application.Contract\Categories\Dtos\Requests\CategoryCreateRequest.cs(11,23,11,27): warning CS8618: Non-nullable property 'Name' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+3>D:\_Ale\Projects\Github\TodoApp\TodoApp\TodoApp.Application.Contract\TodoItems\Dtos\Requests\TodoItemUpdateRequest.cs(11,23,11,28): warning CS8618: Non-nullable property 'Title' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+3>D:\_Ale\Projects\Github\TodoApp\TodoApp\TodoApp.Application.Contract\TodoItems\Dtos\Requests\TodoItemUpdateRequest.cs(13,23,13,34): warning CS8618: Non-nullable property 'Description' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+3>D:\_Ale\Projects\Github\TodoApp\TodoApp\TodoApp.Application.Contract\TodoItems\Dtos\Requests\TodoItemCreateRequest.cs(11,23,11,28): warning CS8618: Non-nullable property 'Title' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+3>D:\_Ale\Projects\Github\TodoApp\TodoApp\TodoApp.Application.Contract\TodoItems\Dtos\Requests\TodoItemCreateRequest.cs(14,23,14,34): warning CS8618: Non-nullable property 'Description' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+3>D:\_Ale\Projects\Github\TodoApp\TodoApp\TodoApp.Application.Contract\TodoItems\Dtos\Requests\GetTodoItemsRequest.cs(13,23,13,33): warning CS8618: Non-nullable property 'FilterText' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+3>D:\_Ale\Projects\Github\TodoApp\TodoApp\TodoApp.Application.Contract\Core\Dtos\Requests\PagedAndSorted.cs(16,23,16,30): warning CS8618: Non-nullable property 'Sorting' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+3>D:\_Ale\Projects\Github\TodoApp\TodoApp\TodoApp.Application.Contract\Core\Dtos\Responses\PagedResultResponse.cs(12,34,12,40): warning CS8618: Non-nullable field '_Items' must contain a non-null value when exiting constructor. Consider declaring the field as nullable.
+3>TodoApp.Application.Contract -> D:\_Ale\Projects\Github\TodoApp\TodoApp\TodoApp.Application.Contract\bin\Debug\net6.0\TodoApp.Application.Contract.dll
+3>Done building project "TodoApp.Application.Contract.csproj".
+5>D:\_Ale\Projects\Github\TodoApp\TodoApp\TodoApp.Domain\TodoItems\ITodoItemRepository.cs(13,78,13,82): warning CS8625: Cannot convert null literal to non-nullable reference type.
+5>D:\_Ale\Projects\Github\TodoApp\TodoApp\TodoApp.Domain\Categories\Category.cs(12,17,12,25): warning CS8618: Non-nullable property 'Name' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+5>D:\_Ale\Projects\Github\TodoApp\TodoApp\TodoApp.Domain\Categories\Category.cs(17,16,17,24): warning CS8618: Non-nullable property 'Name' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+5>D:\_Ale\Projects\Github\TodoApp\TodoApp\TodoApp.Domain\Core\BaseEntity.cs(11,20,11,22): warning CS8618: Non-nullable property 'Id' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+5>D:\_Ale\Projects\Github\TodoApp\TodoApp\TodoApp.Domain\TodoItems\TodoItem.cs(22,17,22,25): warning CS8618: Non-nullable property 'Title' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+5>D:\_Ale\Projects\Github\TodoApp\TodoApp\TodoApp.Domain\TodoItems\TodoItem.cs(22,17,22,25): warning CS8618: Non-nullable property 'Category' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+5>D:\_Ale\Projects\Github\TodoApp\TodoApp\TodoApp.Domain\TodoItems\TodoItem.cs(22,17,22,25): warning CS8618: Non-nullable property 'Description' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+5>D:\_Ale\Projects\Github\TodoApp\TodoApp\TodoApp.Domain\TodoItems\TodoItem.cs(26,16,26,24): warning CS8618: Non-nullable property 'Title' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+5>D:\_Ale\Projects\Github\TodoApp\TodoApp\TodoApp.Domain\TodoItems\TodoItem.cs(26,16,26,24): warning CS8618: Non-nullable property 'Category' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+5>D:\_Ale\Projects\Github\TodoApp\TodoApp\TodoApp.Domain\TodoItems\TodoItem.cs(26,16,26,24): warning CS8618: Non-nullable property 'Description' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+5>TodoApp.Domain -> D:\_Ale\Projects\Github\TodoApp\TodoApp\TodoApp.Domain\bin\Debug\net6.0\TodoApp.Domain.dll
+5>Done building project "TodoApp.Domain.csproj".
+1>TodoApp.Web -> D:\_Ale\Projects\Github\TodoApp\TodoApp\TodoApp.Web\bin\Debug\net6.0\TodoApp.Web.dll
+6>------ Rebuild All started: Project: TodoApp.EntityFrameworkCore, Configuration: Debug Any CPU ------
+6>D:\_Ale\Projects\Github\TodoApp\TodoApp\TodoApp.EntityFrameworkCore\Categories\CategoryRepository.cs(30,91,30,95): warning CS8625: Cannot convert null literal to non-nullable reference type.
+6>D:\_Ale\Projects\Github\TodoApp\TodoApp\TodoApp.EntityFrameworkCore\TodoItems\TodoItemRepository.cs(25,91,25,95): warning CS8625: Cannot convert null literal to non-nullable reference type.
+6>D:\_Ale\Projects\Github\TodoApp\TodoApp\TodoApp.EntityFrameworkCore\TodoAppDbContext.cs(18,16,18,32): warning CS8618: Non-nullable property 'Categories' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+6>D:\_Ale\Projects\Github\TodoApp\TodoApp\TodoApp.EntityFrameworkCore\TodoAppDbContext.cs(18,16,18,32): warning CS8618: Non-nullable property 'TodoItems' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+6>D:\_Ale\Projects\Github\TodoApp\TodoApp\TodoApp.EntityFrameworkCore\Core\BaseRepository.cs(51,20,51,56): warning CS8603: Possible null reference return.
+6>D:\_Ale\Projects\Github\TodoApp\TodoApp\TodoApp.EntityFrameworkCore\Core\BaseRepository.cs(56,20,56,64): warning CS8603: Possible null reference return.
+6>TodoApp.EntityFrameworkCore -> D:\_Ale\Projects\Github\TodoApp\TodoApp\TodoApp.EntityFrameworkCore\bin\Debug\net6.0\TodoApp.EntityFrameworkCore.dll
+6>Done building project "TodoApp.EntityFrameworkCore.csproj".
+========== Rebuild All: 6 succeeded, 0 failed, 0 skipped ==========
