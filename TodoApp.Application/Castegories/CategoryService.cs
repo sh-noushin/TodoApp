@@ -16,7 +16,7 @@ namespace TodoApp.Application.Castegories
         {
             throw new NotImplementedException();
         }
-
+            
         public Task DeleteAsync(Guid id)
         {
             throw new NotImplementedException();
