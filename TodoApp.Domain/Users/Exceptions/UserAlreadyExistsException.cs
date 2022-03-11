@@ -13,5 +13,11 @@ namespace TodoApp.Domain.Users.Exceptions
         {
 
         }
+
+        public UserAlreadyExistsException(Guid id)
+            : base($"User with Id {id} already exists")
+        {
+
+        }
     }
 }
