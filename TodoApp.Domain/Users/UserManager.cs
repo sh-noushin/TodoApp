@@ -21,9 +21,16 @@ namespace TodoApp.Domain.Users
             return Task.FromResult(user);
         }
 
-        public Task<Token> GenerateTokenAsync(User user)
+        public async Task<Token> GenerateTokenAsync(User user)
         {
-            throw new NotImplementedException();
+            var token = new Token(Guid.NewGuid(), Guid.NewGuid(), user.Id);
+
+            if (await _userRepository.HasTokenAsync(user.Id))
+            {
+                await _userRepository.DeleteTokenByUserIdAsync(user.Id);
+            }
+            await _userRepository.CreateTokenAsync(token);
+            return token;
         }
 
         public async Task<bool> LoginAsync(string username, string pasword)
