@@ -1,8 +1,5 @@
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using System.Configuration;
 using TodoApp.EntityFrameworkCore;
-using TodoApp.Web.Extentions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,12 +9,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
-
-builder.Services.AddProjectServices();
-
 builder.Services.AddDbContext<TodoAppDbContext>(options =>
-               options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+               options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
@@ -25,21 +18,13 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "TodoApp.Web v1"));
+    app.UseSwaggerUI();
 }
-
-
 
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
-app.UseRouting();
-
-
-app.UseEndpoints(endpoints =>
-{
-    endpoints.MapControllers();
-});
+app.MapControllers();
 
 app.Run();

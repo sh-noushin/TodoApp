@@ -20,7 +20,7 @@ namespace TodoApp.Domain.Core.Extentions
             return query;
         }
 
-        public static IQueryable<T> PageBy<T>(this IQueryable<T> query, int skipCount, int maxResultCount)
+        public static IQueryable<T> PageBy<T>(this IQueryable<T> query, int skipCount=0, int maxResultCount=10)
             where T : class
         {
             return query.Skip(skipCount).Take(maxResultCount);

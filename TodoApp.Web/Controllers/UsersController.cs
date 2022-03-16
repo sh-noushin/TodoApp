@@ -8,7 +8,7 @@ namespace TodoApp.Web.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class UsersController
+    public class UsersController : ControllerBase
     {
          private readonly ITodoUserService _userService;
 
@@ -22,17 +22,16 @@ namespace TodoApp.Web.Controllers
         [HttpPost]
         public async Task<string> CreateAsync(UserCreateRequest input)
         {
-            await _userService.CreateAsync(input);
+                await _userService.CreateAsync(input);
             return Task.FromResult("Created").ToString();
         }
 
-        [HttpGet]
-        public async Task<PagedResultResponse<UserResponse>> GetAllAsync([FromQuery] GetUsersRequest input)
+       [HttpGet]
+       public async Task<PagedResultResponse<UserResponse>> GetAllAsync([FromQuery] GetUsersRequest input)
         {
             return await _userService.GettAllAsync(input);
 
         }
-
 
 
 

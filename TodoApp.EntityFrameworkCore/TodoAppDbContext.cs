@@ -36,7 +36,7 @@ namespace TodoApp.EntityFrameworkCore
             modelBuilder.Entity<TodoItem>()
                         .HasOne(x => x.Category)
                         .WithMany()
-                        .HasForeignKey(x => x.Category.Id).IsRequired();
+                        .HasForeignKey(x => x.CategoryId).IsRequired();
 
             modelBuilder.Entity<User>()
                .HasOne(x => x.Token).WithOne().HasForeignKey<Token>(x => x.UserId);

@@ -14,9 +14,9 @@ namespace TodoApp.Application.Authentication
     {
 
         private readonly IUserRepository _repository;
-        private readonly UserManager _userManager;
+        private readonly IUserManager _userManager;
 
-        public AuthService(IUserRepository repository, UserManager userManager)
+        public AuthService(IUserRepository repository, IUserManager userManager)
         {
             _repository = repository;
             _userManager = userManager;

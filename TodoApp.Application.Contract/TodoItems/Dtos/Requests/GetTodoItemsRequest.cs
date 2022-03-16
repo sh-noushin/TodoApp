@@ -10,6 +10,6 @@ namespace TodoApp.Application.Contract.TodoItems.Dtos.Requests
     public class GetTodoItemsRequest : PagedAndSorted
     {
 
-        public string FilterText { get; set; }
+        public string FilterText { get; set; } = "";
     }
 }

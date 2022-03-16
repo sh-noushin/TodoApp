@@ -13,6 +13,7 @@ using TodoApp.EntityFrameworkCore.Categories;
 using TodoApp.EntityFrameworkCore.TodoItems;
 using TodoApp.EntityFrameworkCore.Users;
 
+
 namespace TodoApp.Web.Extentions
 {
     public static class IServiceCollectionExtentions
@@ -20,15 +21,30 @@ namespace TodoApp.Web.Extentions
         public static IServiceCollection AddProjectServices(this IServiceCollection services)
         {
             services.AddScoped<ICategoryService, CategoryService>();
-            services.AddScoped<ITodoItemService, TodoItemService>();
-            services.AddScoped<ITodoUserService, TodoUserService>();
-            services.AddScoped<IAuthService, AuthService>();
-            services.AddScoped<IUserManager, UserManager>();
-
-
+            services.AddScoped<ICategoryManager, CategoryManager>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
+
+            services.AddScoped<ITodoItemService, TodoItemService>();
+            services.AddScoped<ITodoItemManager, TodoItemManager>();
             services.AddScoped<ITodoItemRepository, TodoItemRepository>();
+
+            services.AddScoped<IAuthService, AuthService>();
+            services.AddScoped<ITodoUserService, TodoUserService>();
+            services.AddScoped<IUserManager, UserManager>();
             services.AddScoped<IUserRepository, UserRepository>();
+
+            services.AddAutoMapper(typeof(TodoApp.Application.Users.UsersMappingProfile).Assembly);
+            services.AddAutoMapper(typeof(TodoApp.Application.Castegories.CategoriesMappingProfile).Assembly);
+            services.AddAutoMapper(typeof(TodoApp.Application.TodoItems.TodoItemsMappingProfile).Assembly);
+
+
+
+
+
+
+
+
+
             return services;
         }
 

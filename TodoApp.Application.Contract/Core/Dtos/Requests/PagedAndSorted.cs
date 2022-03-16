@@ -13,6 +13,6 @@ namespace TodoApp.Application.Contract.Core.Dtos.Requests
         public int SkipCount { get; set; } = 0;
         [Range(1, int.MaxValue)]
         public int MaxResultCount { get; set; } = 10;
-        public string Sorting { get; set; }
+        public string Sorting { get; set; } = "";
     }
 }

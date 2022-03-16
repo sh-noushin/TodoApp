@@ -13,7 +13,7 @@ using TodoApp.Domain.Users.Exceptions;
 
 namespace TodoApp.Application.Users
 {
-    public class TodoUserService : ITodoUserService
+    public class TodoUserService : Profile,ITodoUserService
     {
 
         private readonly IUserRepository _userRepository;
@@ -27,7 +27,11 @@ namespace TodoApp.Application.Users
             _mapper = mapper;
 
         }
-        public async Task CreateAsync(UserCreateRequest input)
+
+        public TodoUserService()
+        {
+
+        }        public async Task CreateAsync(UserCreateRequest input)
         {
             var user =await _manager.CreateAsync(input.UserName, input.Password);
             if (await _userRepository.AnyAsync(x => x.UserName == user.UserName))
@@ -56,6 +60,7 @@ namespace TodoApp.Application.Users
                 filter.Sorting,
                 filter.SkipCount,
                 filter.MaxResultCount);
+           
             return new PagedResultResponse<UserResponse>()
             {
                 TotalCount = totalCount,
