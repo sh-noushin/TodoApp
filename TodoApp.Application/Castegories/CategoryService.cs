@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,34 +8,82 @@ using TodoApp.Application.Contract.Categories;
 using TodoApp.Application.Contract.Categories.Dtos.Requests;
 using TodoApp.Application.Contract.Categories.Dtos.Responses;
 using TodoApp.Application.Contract.Core.Dtos.Responses;
+using TodoApp.Domain.Categories;
+using TodoApp.Domain.Categories.Exceptions;
+using TodoApp.Domain.TodoItems;
 
 namespace TodoApp.Application.Castegories
 {
     public class CategoryService : ICategoryService
     {
-        public Task CreateAsync(CategoryCreateRequest input)
+
+        private readonly ICategoryRepository _categoryRepository;
+        private readonly ITodoItemRepository _todoItemRepository;
+        private readonly IMapper _mapper;
+
+        public CategoryService(ICategoryRepository categoryrepository, IMapper mapper, ITodoItemRepository todoItemRepository)
         {
-            throw new NotImplementedException();
+            _categoryRepository = categoryrepository;
+            _mapper = mapper;
+            _todoItemRepository = todoItemRepository;
+        }
+
+        public CategoryService()
+        {
+
+        }
+
+        public async Task CreateAsync(CategoryCreateRequest input)
+        {
+            var category = new Category(input.Name);
+            if (await _categoryRepository.AnyAsync(x => x.Name == category.Name))
+            {
+                throw new CategoryAlreadyExistsException(category.Name);
+            }
+            await _categoryRepository.CreateAsync(category);
         }
             
-        public Task DeleteAsync(Guid id)
+        public  async Task DeleteAsync(Guid id)
         {
-            throw new NotImplementedException();
+            await _categoryRepository.DeleteAsync(id);
         }
 
-        public Task<PagedResultResponse<CategoryResponse>> GetAllAsync(GetCategoriesRequest filter)
+        public async Task<PagedResultResponse<CategoryResponse>> GetAllAsync(GetCategoriesRequest filter)
         {
-            throw new NotImplementedException();
+            long totalCount = await _categoryRepository.GetCountAsync(filter.FilterText);
+
+            var items = await _categoryRepository.GetAllAsync(
+                filter.FilterText,
+                filter.Sorting,
+                filter.SkipCount,
+                filter.MaxResultCount);
+            return new PagedResultResponse<CategoryResponse>()
+            {
+                TotalCount = totalCount,
+                Items = _mapper.Map<List<Category>, List<CategoryResponse>>(items)
+            };
         }
 
-        public Task<CategoryResponse> GetByIdAsync(Guid id)
+        public async Task<CategoryResponse> GetByIdAsync(Guid id)
         {
-            throw new NotImplementedException();
+            return _mapper.Map<Category, CategoryResponse>(await _categoryRepository.GetAsync(id));
         }
 
-        public Task UpdateAsync(Guid id, CategoryUpdateRequest input)
+        public async Task UpdateAsync(Guid id, CategoryUpdateRequest input)
         {
-            throw new NotImplementedException();
+            var category = await _categoryRepository.GetAsync(id);
+            if (category == null)
+            {
+                throw new CategoryNotFoundException(id);
+
+            }
+            if (await _categoryRepository.AnyAsync(x => x.Id != id & x.Name == input.Name))
+            {
+                throw new CategoryAlreadyExistsException(input.Name);
+            }
+
+            category.SetName(input.Name);
+            await _categoryRepository.UpdateAsync(category);
         }
     }
 }

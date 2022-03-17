@@ -9,6 +9,6 @@ namespace TodoApp.Application.Contract.Categories.Dtos.Requests
 {
     public class GetCategoriesRequest : PagedAndSorted
     {
-        public string FilterText { get; set; }
+        public string FilterText { get; set; } = "";
     }
 }
